@@ -4,27 +4,29 @@ import { useGoogleLogin } from '@react-oauth/google';
 import { GoogleLogin, googleLogout } from '@react-oauth/google';
 import axios from "axios"
 import jwt_decode from "jwt-decode";
-
-
 import './LoginForm.css';
+
 // import Illustration from '../../components/Illustration/Illustration';
 
 // 1071314173715-a71ksf6t0sqlnt1su90a225jo89mae2d.apps.googleusercontent.com
 // 1071314173715-a71ksf6t0sqlnt1su90a225jo89mae2d.apps.googleusercontent.com
 // import {env} from 'process';
+
+
 const LoginForm = function () {
+
+  let [userName, setuserName] = useState("");
+  // let [email_id, setEmail_id] = useState("");
+
 
   let [userLogged, setLogged] = useState(false);
   let [buttonDisable, setButtonDisable] = useState(false);
-  let [userName, setuserName] = useState("");
 
   let userDetails;
 
   const [bData, setBData] = useState({});
 
-  // useEffect(() => {
 
-  // },[]);
 
   const handleLogin = function (googleData) {
 
@@ -144,7 +146,7 @@ const login = useGoogleLogin({
 
 
 
-        <button disabled={buttonDisable} onClick={() => login()} className={userLogged ? 'disappear-ele' : ""} >
+        <button disabled={buttonDisable} onClick={() =>login()} className={userLogged ? 'disappear-ele' : ""} >
 
           {userLogged ? 'You are all Set!' : "Sign in with Google 🚀"}
         </button>

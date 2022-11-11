@@ -133,6 +133,8 @@ const Form = () => {
   
   axios.post('/pomodoro-timer', res.data)
 
+  console.log(res.data.redirect)
+
   if(res.data.redirect=='/pomodoro-timer'){
       window.location='/pomodoro-timer';
   }
@@ -141,7 +143,7 @@ const Form = () => {
     }
 return (
    <div className="pomodoro-form-container">
-  <form action='/pomodoro-form' method='post'>
+   <form action='/pomodoro-form' method='post'> 
 
 
       <label htmlFor="title" className="goal-title">Title for the Session
@@ -223,7 +225,7 @@ return (
       </Link>
 
 
-  </form>
+  </form> 
    </div>
     )
 
